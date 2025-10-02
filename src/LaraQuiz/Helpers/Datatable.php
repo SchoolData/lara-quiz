@@ -61,12 +61,10 @@ class Datatable
     public static function handleFormatter(array $column, $row)
     {
         $columnName = static::getColumnNameAlias($column);
-        // Is there a formatter?
         if (isset($column['formatter'])) {
-            return $column['formatter']($row[$columnName], $row);
-        } else {
-            return $row[$columnName];
+            return $column['formatter'](is_array($row) ? $row[$columnName] : $row->$columnName, $row);
         }
+        return is_array($row) ? $row[$columnName] : $row->$columnName;
     }
 
     /**
@@ -79,7 +77,7 @@ class Datatable
         $globalSearch = [];
         $columnSearch = [];
 
-        $dtColumns = array_pluck($columns, 'dt');
+        $dtColumns = array_column($columns, 'dt');
 
         if (isset($request['search']) && trim($request['search']['value'], '') !== '') {
             $str = trim($request['search']['value']);

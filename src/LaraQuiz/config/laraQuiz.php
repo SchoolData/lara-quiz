@@ -49,7 +49,7 @@ return [
     'tableSurveyUser' => 'survey_user',
     'userForeignKey' => 'user_id',
     'tableUser' => 'users',
-    'modelUser' => '\App\User',
+    'modelUser' => '\App\Models\User',
 
     /*
     |--------------------------------------------------------------------------

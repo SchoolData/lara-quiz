@@ -1,11 +1,14 @@
 <?php
 declare(strict_types=1);
 
+
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 /**
- * Class CreateQuizRunnerQuestionsTable
+ * Class CreateQuizRunnerListOptionsTable
  *
  * @see \QuizRunner\Contracts\Options\ListOption
  */
@@ -29,13 +32,13 @@ class CreateQuizRunnerListOptionsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->increments('id');
-            $table->unsignedInteger('question_option_id');
+            $table->id();
+            $table->unsignedBigInteger('question_option_id');
             $table->smallInteger('order');
             $table->boolean('is_input')->default(false);
             $table->string('title', 191);
@@ -55,7 +58,7 @@ class CreateQuizRunnerListOptionsTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::drop($this->table);
     }

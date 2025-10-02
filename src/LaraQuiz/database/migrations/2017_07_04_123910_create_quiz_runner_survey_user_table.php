@@ -1,10 +1,13 @@
 <?php
 declare(strict_types=1);
 
+
+
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 /**
  * Class CreateQuizRunnerSurveyUserTable
@@ -49,13 +52,13 @@ class CreateQuizRunnerSurveyUserTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->unsignedInteger('survey_id');
-            $table->unsignedInteger($this->userForeignKey);
+            $table->unsignedBigInteger('survey_id');
+            $table->unsignedBigInteger($this->userForeignKey);
 
             $table->primary(['survey_id', $this->userForeignKey]);
 
@@ -76,7 +79,7 @@ class CreateQuizRunnerSurveyUserTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::drop($this->table);
     }
