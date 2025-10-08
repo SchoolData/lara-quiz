@@ -4,8 +4,8 @@
     </div>
 
     <form id="question-form" class="box box-solid" action="{{$createQuestionUrl}}" method="post">
-        {{ method_field('post') }}
-        {{ csrf_field() }}
+        @method('post')
+        @csrf
         {{ referrer_field() }}
 
         <div class="box-header with-border">

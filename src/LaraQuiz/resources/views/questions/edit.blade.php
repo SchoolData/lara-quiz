@@ -14,8 +14,8 @@
                     </div>
 
                     <form id="question-form" class="box box-solid" action="{{$formUrl}}" method="post">
-                        {{ method_field($httpMethod) }}
-                        {{ csrf_field() }}
+                        @method($httpMethod)
+                        @csrf
                         {{ referrer_field() }}
 
                         <div class="box-header with-border">

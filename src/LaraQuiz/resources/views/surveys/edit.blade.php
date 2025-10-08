@@ -15,8 +15,8 @@
                         </h3>
                     </div>
                     <form action="{{$formUrl}}" method="post" class="form-horizontal">
-                        {{ method_field($httpMethod) }}
-                        {{ csrf_field() }}
+                        @method($httpMethod)
+                        @csrf
                         {{ referrer_field() }}
                         <div class="box-body">
 
