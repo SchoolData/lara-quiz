@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
+namespace LaraQuiz\Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

@@ -13,8 +13,8 @@
                         <h3 class="box-title">{{$headerText}}</h3>
                     </div>
                     <form action="{{$formUrl}}" method="post">
-                        @method($httpMethod)
-                        @csrf
+                        {{ method_field($httpMethod) }}
+                        {{ csrf_field() }}
                         {{ referrer_field() }}
                         <div class="box-body">
                             <div class="row">

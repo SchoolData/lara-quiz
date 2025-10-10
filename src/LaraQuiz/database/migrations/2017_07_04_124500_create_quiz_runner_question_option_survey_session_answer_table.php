@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace LaraQuiz\Database\Migrations;
+
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
 use Illuminate\Database\Migrations\Migration;
@@ -43,7 +45,7 @@ class CreateQuizRunnerQuestionOptionSurveySessionAnswerTable extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
@@ -71,7 +73,7 @@ class CreateQuizRunnerQuestionOptionSurveySessionAnswerTable extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::drop($this->table);
     }

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
+namespace LaraQuiz\Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -32,12 +32,12 @@ class CreateQuizRunnerListOptionsTable extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('question_option_id');
             $table->smallInteger('order');
             $table->boolean('is_input')->default(false);
@@ -58,7 +58,7 @@ class CreateQuizRunnerListOptionsTable extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::drop($this->table);
     }

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace LaraQuiz\Database\Migrations;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -30,12 +32,12 @@ class CreateQuizRunnerQuestionsTable extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('text', 255);
             $table->string('hint', 255)->default('');
             $table->string('feedback', 255)->default('');
@@ -49,7 +51,7 @@ class CreateQuizRunnerQuestionsTable extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::drop($this->table);
     }

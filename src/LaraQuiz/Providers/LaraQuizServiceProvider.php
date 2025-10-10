@@ -21,7 +21,7 @@ class LaraQuizServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(): void
+    public function boot()
     {
         $this->publishes([
             __DIR__ . '/../config/laraQuiz.php' => config_path('laraQuiz.php'),
@@ -36,7 +36,7 @@ class LaraQuizServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register(): void
+    public function register()
     {
         $this->mergeConfigFrom(
             __DIR__ . '/../config/laraQuiz.php', 'laraQuiz'

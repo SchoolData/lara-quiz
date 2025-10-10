@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
+namespace LaraQuiz\Database\Migrations;
 
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;

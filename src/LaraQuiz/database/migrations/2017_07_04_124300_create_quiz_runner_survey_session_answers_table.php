@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
+namespace LaraQuiz\Database\Migrations;
 
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
@@ -47,12 +47,12 @@ class CreateQuizRunnerSurveySessionAnswersTable extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('survey_session_id');
             $table->unsignedBigInteger('question_id');
             $table->timestamp('created_at')->nullable();
@@ -77,7 +77,7 @@ class CreateQuizRunnerSurveySessionAnswersTable extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::drop($this->table);
     }

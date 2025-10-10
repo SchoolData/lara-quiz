@@ -58,7 +58,7 @@ class Datatable
      * @param array|object $row Data from DB.
      * @return mixed
      */
-    public static function handleFormatter(array $column, $row)
+    public static function handleFormatter(array $column, array|object $row)
     {
         $columnName = static::getColumnNameAlias($column);
         if (isset($column['formatter'])) {
