@@ -1,5 +1,5 @@
 {
-  "name": "itrex-group/lara-quiz",
+  "name": "schooldata/lara-quiz",
   "description": "Laravel package to create forms: surveys, exams, etc.",
   "keywords": [
     "poll",
@@ -11,12 +11,6 @@
     "Laravel"
   ],
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Sergey Rud",
-      "email": "sergey.rud@itrexgroup.com"
-    }
-  ],
   "require": {
     "php": ">=7.1",
     "itrex-group/quiz-runner": "dev-master",
