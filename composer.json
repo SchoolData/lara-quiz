@@ -42,7 +42,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "SchoolData\\LaraQuiz\\": "src/"
+      "SchoolData\\LaraQuiz\\": "src/LaraQuiz/"
     },
     "classmap": [
       "database/migrations"
