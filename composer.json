@@ -42,7 +42,17 @@
   ],
   "autoload": {
     "psr-4": {
-      "LaraQuiz\\": "src/LaraQuiz/"
+      "SchoolData\\LaraQuiz\\": "src/"
+    },
+    "classmap": [
+      "database/migrations"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SchoolData\\LaraQuiz\\LaraQuizServiceProvider"
+      ]
     }
   },
   "config": {
