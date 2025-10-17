@@ -42,13 +42,13 @@
   ],
   "autoload": {
     "psr-4": {
-      "SchoolData\\LaraQuiz\\": "src/LaraQuiz/"
+      "LaraQuiz\\": "src/LaraQuiz/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "SchoolData\\LaraQuiz\\LaraQuizServiceProvider"
+        "LaraQuiz\\LaraQuizServiceProvider"
       ]
     }
   },
