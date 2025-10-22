@@ -60,15 +60,19 @@ class CreateQuizRunnerSurveyUserTable extends Migration
 
             $table->primary(['survey_id', $this->userForeignKey]);
 
-            $table->foreign('survey_id')
-                ->references('id')->on($this->surveyTable)
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            if (Schema::hasTable($this->surveyTable)) {
+                $table->foreign('survey_id')
+                    ->references('id')->on($this->surveyTable)
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+            }
 
-            $table->foreign($this->userForeignKey)
-                ->references('id')->on($this->userTable)
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            if (Schema::hasTable($this->userTable)) {
+                $table->foreign($this->userForeignKey)
+                    ->references('id')->on($this->userTable)
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+            }
         });
     }
 
