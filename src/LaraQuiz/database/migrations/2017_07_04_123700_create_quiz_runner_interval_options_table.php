@@ -35,8 +35,8 @@ class CreateQuizRunnerIntervalOptionsTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('question_option_id');
+            $table->increments('id');
+            $table->unsignedInteger('question_option_id');
             $table->smallInteger('min_value');
             $table->smallInteger('max_value');
 

@@ -50,9 +50,9 @@ class CreateQuizRunnerSurveySessionAnswersTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('survey_session_id');
-            $table->unsignedBigInteger('question_id');
+            $table->increments('id');
+            $table->unsignedInteger('survey_session_id');
+            $table->unsignedInteger('question_id');
             $table->timestamp('created_at')->nullable();
 
             $table->index('survey_session_id');

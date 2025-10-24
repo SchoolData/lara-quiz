@@ -33,8 +33,8 @@ class CreateQuizRunnerSurveyTagTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->unsignedBigInteger('survey_id');
-            $table->unsignedBigInteger('tag_id');
+            $table->unsignedInteger('survey_id');
+            $table->unsignedInteger('tag_id');
 
             $table->primary(['survey_id', 'tag_id']);
 

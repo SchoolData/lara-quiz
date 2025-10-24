@@ -43,8 +43,8 @@ class CreateQuizRunnerSessionAnswerValuesTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('survey_session_answer_id');
+            $table->increments('id');
+            $table->unsignedInteger('survey_session_answer_id');
             $table->text('value');
 
             $table->unique('survey_session_answer_id');

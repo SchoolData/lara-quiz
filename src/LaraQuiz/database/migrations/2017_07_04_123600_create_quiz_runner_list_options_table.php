@@ -35,8 +35,8 @@ class CreateQuizRunnerListOptionsTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('question_option_id');
+            $table->increments('id');
+            $table->unsignedInteger('question_option_id');
             $table->smallInteger('order');
             $table->boolean('is_input')->default(false);
             $table->string('title', 191);

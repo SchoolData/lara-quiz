@@ -35,7 +35,7 @@ class CreateQuizRunnerTagsTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('name', 64);
             $table->string('description', 191)->default('');
 

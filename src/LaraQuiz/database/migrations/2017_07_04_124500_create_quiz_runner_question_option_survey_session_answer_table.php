@@ -48,8 +48,8 @@ class CreateQuizRunnerQuestionOptionSurveySessionAnswerTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->unsignedBigInteger('survey_session_answer_id');
-            $table->unsignedBigInteger('question_option_id');
+            $table->unsignedInteger('survey_session_answer_id');
+            $table->unsignedInteger('question_option_id');
             $table->text('text')->nullable();
 
             $table->primary(['survey_session_answer_id', 'question_option_id'], 'session_answer_question_option_primary');

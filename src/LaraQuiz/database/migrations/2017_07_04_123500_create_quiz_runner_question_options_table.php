@@ -36,8 +36,8 @@ class CreateQuizRunnerQuestionOptionsTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('question_id');
+            $table->increments('id');
+            $table->unsignedInteger('question_id');
             $table->unsignedTinyInteger('correctness')->default(QuestionOption::CORRECTNESS_NEUTRAL);
             $table->tinyInteger('score')->default(0);
             $table->string('feedback', 255)->default('');
