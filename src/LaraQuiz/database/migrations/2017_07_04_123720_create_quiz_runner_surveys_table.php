@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -33,12 +31,12 @@ class CreateQuizRunnerSurveysTable extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->id();
+            $table->increments('id');
             $table->string('title', 191);
             $table->string('description', 255)->default('');
             $table->unsignedInteger('time_limit')->default(0);
@@ -54,7 +52,7 @@ class CreateQuizRunnerSurveysTable extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::drop($this->table);
     }

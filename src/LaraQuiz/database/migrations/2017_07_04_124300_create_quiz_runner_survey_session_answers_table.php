@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
-
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
 use Illuminate\Database\Migrations\Migration;
@@ -47,14 +45,14 @@ class CreateQuizRunnerSurveySessionAnswersTable extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->id();
-            $table->unsignedBigInteger('survey_session_id');
-            $table->unsignedBigInteger('question_id');
+            $table->increments('id');
+            $table->unsignedInteger('survey_session_id');
+            $table->unsignedInteger('question_id');
             $table->timestamp('created_at')->nullable();
 
             $table->index('survey_session_id');
@@ -77,7 +75,7 @@ class CreateQuizRunnerSurveySessionAnswersTable extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::drop($this->table);
     }

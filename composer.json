@@ -39,6 +39,13 @@
       "LaraQuiz\\": "src/LaraQuiz/"
     }
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaraQuiz\\Providers\\LaraQuizServiceProvider"
+      ]
+    }
+  },
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": false

@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
-
 use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
 use Illuminate\Database\Migrations\Migration;
@@ -57,8 +55,8 @@ class CreateQuizRunnerSurveyUserTable extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->engine = 'InnoDB';
 
-            $table->unsignedBigInteger('survey_id');
-            $table->unsignedBigInteger($this->userForeignKey);
+            $table->unsignedInteger('survey_id');
+            $table->unsignedInteger($this->userForeignKey);
 
             $table->primary(['survey_id', $this->userForeignKey]);
 
