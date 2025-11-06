@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace LaraQuiz\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class BaseModel
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 abstract class BaseModel extends Model
 {
+    use HasFactory;
     /**
      * @return string
      */
